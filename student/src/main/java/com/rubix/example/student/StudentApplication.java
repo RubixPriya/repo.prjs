@@ -11,9 +11,11 @@ public class StudentApplication {
 		
 		ApplicationContext context = SpringApplication.run(StudentApplication.class, args);
 		
-		StudentService service = context.getBean(StudentService.class);
-		service.displayEntites();
-		service.modifyEntities();
+		StudentBasedService service = context.getBean(StudentBasedService.class);
+		service.useStandardRepoMethods();
+		service.useCustomQueryMethods();
+		
+		//service.modifyEntities();
 		//System.out.println("Hello Students");
 	}
 
